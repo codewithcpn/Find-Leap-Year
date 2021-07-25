@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leap Year Program in Php</title>
+</head>
+<body>
+    <form method="POST">
+        <fieldset style="width:30rem;">
+            <legend>Find Leap Year</legend>
+            <label>Enter Starting Year:</label>
+            <input type="number" name="date1" ><br><br>
+            <label>Enter Ending Year:</label>
+            <input type="number" name="date2"><br><br>
+            <input type="submit" name="submit">
+        </fieldset>
+        <?php  
+        $date1 = $_POST['date1'];
+        $date2 = $_POST['date2'];
+function isLeap($year)  
+{  
+    return (date('L', mktime(0, 0, 0, 1, 1, $year))==1);  
+}  
+//For testing  
+for($year=$date1; $year<$date2; $year++)  
+{  
+    If (isLeap($year))  
+    {  
+        echo "<hr><p style='color:tomato'>$year : Yes leap year</p><hr>";  
+    }  
+    else  
+    {  
+        echo "<p style='color:blue'>$year : Not leap year</p>";  
+    }  
+}  
+?>  
+
+    </form>
+</body>
+</html>
